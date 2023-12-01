@@ -13,7 +13,7 @@ function extract_calibration(input; words=false)
     return parse(Int, digits)
 end
 
-@testset "test 1" begin
+@testset "Test 1" begin
 
     sample_inputs = ["1abc2",
     "pqr3stu8vwx",
