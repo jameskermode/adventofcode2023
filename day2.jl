@@ -37,7 +37,7 @@ end
 function sum_powers(lines)
     sum_power = 0
     for line in lines
-        id, results = parse_game(line)
+        _, results = parse_game(line)
         sum_power += power(results)
     end
     return sum_power
