@@ -21,7 +21,7 @@ end
 
 is_valid(results) = all([all(N_rgb .<= max_rgb) for N_rgb in results])
 
-power(results) = *(maximum(results, dims=2)...)
+power(results) = prod(maximum(results, dims=2))
 
 function count_valid_games(lines)
     sum_id = 0
