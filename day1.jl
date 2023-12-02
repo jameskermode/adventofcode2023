@@ -49,12 +49,12 @@ end
     @test sum(outputs) == sum(sample_outputs)
 end
 
-println("My results:")
-mylines = open("input1.txt") do f
-    readlines(f)
-end
 
 @testset "Problems" begin
+    mylines = open("input1.txt") do f
+        readlines(f)
+    end    
+
     prob1 = sum([extract_calibration(line) for line in mylines])
     @show prob1
     @test prob1 == 53194
