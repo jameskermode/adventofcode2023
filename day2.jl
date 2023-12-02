@@ -19,7 +19,7 @@ function parse_game(line)
     return id, hcat(results...)
 end
 
-is_valid(results) = all([all(N_rgb .<= max_rgb) for N_rgb in results])
+is_valid(results) = all([all(col .<= max_rgb) for col in eachcol(results)])
 
 power(results) = prod(maximum(results, dims=2))
 
