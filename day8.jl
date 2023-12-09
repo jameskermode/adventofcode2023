@@ -14,34 +14,28 @@ end
 
 LR_map = Dict('L' => 1, 'R' => 2)
 
-function walk_nodes(instructions, nodes)
-    location = :AAA
+function walk_nodes(instructions, nodes; start=:AAA)
+    location = start
     nsteps = 0
     for step in instructions
         # @show (nsteps, location, step)
         location = nodes[location][LR_map[step]]
         nsteps += 1
-        location == :ZZZ && break
+        endswith(String(location), "Z") && break
     end
     nsteps
 end
 
-function walk_ghosts(instructions, nodes)
+function walk_multiple(instructions, nodes)
     _keys = collect(keys(nodes))
-    locations = _keys[findall(endswith.([String(key) for key in _keys], "A"))]
-    exits = Set(_keys[findall(endswith.([String(key) for key in _keys], "Z"))])
-    @show locations, exits
-    nsteps = 0
-    for step in instructions
-        for i in eachindex(locations)
-            locations[i] = nodes[locations[i]][LR_map[step]]
-        end
-        nsteps += 1
-        nexit = sum([endswith.(String(loc), "Z") for loc in locations])
-        @show nsteps, nexit 
-        Set(locations) == exits && break
+    starts   = _keys[findall(endswith.([String(key) for key in _keys], "A"))]
+
+    cycles = []
+    for start in starts
+        push!(cycles, walk_nodes(instructions, nodes; start=start))
+        println("$start done")
     end
-    nsteps
+    return lcm(cycles...)
 end
 
 instructions, nodes = read_nodes("day8_test.txt")
@@ -54,7 +48,7 @@ instructions, nodes = read_nodes("day8.txt")
 @test walk_nodes(instructions, nodes) == 23147
 
 instructions, nodes = read_nodes("day8_test3.txt")
-walk_ghosts(instructions, nodes)
+cycles = walk_multiple(instructions, nodes)
 
 instructions, nodes = read_nodes("day8.txt")
-walk_ghosts(instructions, nodes)
+@show walk_multiple(instructions, nodes)
