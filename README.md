@@ -9,4 +9,6 @@ Solutions to [Advent of Code 2023](https://adventofcode.com/2023) problems in th
 - **Day 5** [If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5) Partially solved in [day5.jl](day5.jl).
 - **Day 6** [Wait For It](https://adventofcode.com/2023/day/6) Solved in [day6.jl](day6.jl).
 - **Day 7** [Camel Cards](https://adventofcode.com/2023/day/7) Solved in [day7.jl](day7.jl).
+- **Day 8** [Haunted Wasteland](https://adventofcode.com/2023/day/8) Solved in [day8.jl](day8.jl).
+- **Day 9** [Mirage Maintenance](https://adventofcode.com/2023/day/9) Solved in [day9.jl](day9.jl).
 
