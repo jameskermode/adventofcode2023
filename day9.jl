@@ -12,7 +12,6 @@ function extrapolate(row)
     last_entries = [row[end]]
     while true
         row = diff(row)
-        @show row
         push!(last_entries, row[end])
         all(row .== 0) && break
     end

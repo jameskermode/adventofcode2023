@@ -27,15 +27,14 @@ function walk_nodes(instructions, nodes; start=:AAA)
 end
 
 function walk_multiple(instructions, nodes)
-    _keys = collect(keys(nodes))
-    starts   = _keys[findall(endswith.([String(key) for key in _keys], "A"))]
-
-    cycles = []
+    starts   = [key for key in keys(nodes) if endswith(String(key), "A")]
+    cycles = Int[]
     for start in starts
         push!(cycles, walk_nodes(instructions, nodes; start=start))
         println("$start done")
     end
-    return lcm(cycles...)
+    @show cycles
+    return lcm(cycles)
 end
 
 instructions, nodes = read_nodes("day8_test.txt")
