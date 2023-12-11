@@ -11,4 +11,6 @@ Solutions to [Advent of Code 2023](https://adventofcode.com/2023) problems in th
 - **Day 7** [Camel Cards](https://adventofcode.com/2023/day/7) Solved in [day07.jl](day07.jl).
 - **Day 8** [Haunted Wasteland](https://adventofcode.com/2023/day/8) Solved in [day08.jl](day08.jl).
 - **Day 9** [Mirage Maintenance](https://adventofcode.com/2023/day/9) Solved in [day09.jl](day09.jl).
+- **Day 10** [Pipe Maze](https://adventofcode.com/2023/day/10) Partially solved in [day10.jl](day10.jl).
+- **Day 11** [Cosmic Expansion](https://adventofcode.com/2023/day/11) Solved in [day11.jl](day11.jl).
 
