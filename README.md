@@ -13,4 +13,4 @@ Solutions to [Advent of Code 2023](https://adventofcode.com/2023) problems in th
 - **Day 9** [Mirage Maintenance](https://adventofcode.com/2023/day/9) Solved in [day09.jl](day09.jl).
 - **Day 10** [Pipe Maze](https://adventofcode.com/2023/day/10) Solved in [day10.jl](day10.jl).
 - **Day 11** [Cosmic Expansion](https://adventofcode.com/2023/day/11) Solved in [day11.jl](day11.jl).
-
+- **Day 12** [Hot Springs](https://adventofcode.com/2023/day/12) Part 1 solved in [day12.jl](day12.jl).
